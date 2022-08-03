@@ -49,7 +49,7 @@ object GameRepositoryImpl : GameRepository {
                     40
                 )
             }
-            Level.HARD  -> {
+            Level.HARD -> {
                 GameSettings(
                     30,
                     30,

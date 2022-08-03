@@ -44,7 +44,9 @@ class GameFinishedFragment : Fragment() {
         if (!args.containsKey(KEY_GAME_RESULT)) {
             throw RuntimeException("gameResult is absent")
         }
-        gameResult = args.getSerializable(KEY_GAME_RESULT) as GameResult
+        args.getParcelable<GameResult>(KEY_GAME_RESULT)?.let {
+            gameResult = it
+        }
     }
 
     private fun retryGame() {
@@ -64,7 +66,7 @@ class GameFinishedFragment : Fragment() {
         fun getInstance(gameResult: GameResult): GameFinishedFragment {
             return GameFinishedFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(KEY_GAME_RESULT, gameResult)
+                    putParcelable(KEY_GAME_RESULT, gameResult)
                 }
             }
         }
