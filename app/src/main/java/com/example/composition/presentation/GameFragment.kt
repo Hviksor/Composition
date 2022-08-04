@@ -23,6 +23,7 @@ class GameFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider(this)[GameViewModel::class.java]
     }
+
     private val tvOptions by lazy {
         mutableListOf<TextView>().apply {
             add(binding.tvOption1)
