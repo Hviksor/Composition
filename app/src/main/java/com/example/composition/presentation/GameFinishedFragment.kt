@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.composition.R
 import com.example.composition.databinding.FragmentGameFinishedBinding
 import com.example.composition.domain.entity.GameResult
 
@@ -32,12 +35,67 @@ class GameFinishedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setOnClickListeners()
+        setBinding()
+    }
+
+    private fun setBinding() {
+        binding.emojiResult.setImageResource(getResultImg(gameResult.winner))
+        binding.tvRequiredAnswers.text = String.format(
+            requireActivity().resources.getString(R.string.required_score),
+            gameResult.gameSettings.minCountOfRightAnswers
+        )
+        binding.tvRequiredAnswers.text = String.format(
+            requireActivity().resources.getString(R.string.required_score),
+            gameResult.gameSettings.minCountOfRightAnswers
+        )
+        binding.tvRequiredPercentage.text = String.format(
+            requireActivity().resources.getString(R.string.required_percentage),
+            gameResult.gameSettings.minPercentOfRightAnswers
+        )
+        binding.tvScoreAnswers.text = String.format(
+            requireActivity().resources.getString(R.string.score_answers),
+            gameResult.countOfRightAnswers
+        )
+        binding.tvScoreAnswers.setTextColor(getColorFromState(gameResult.enoughCount))
+        binding.tvScorePercentage.setTextColor(getColorFromState(gameResult.enoughPercent))
+        binding.tvScorePercentage.text = String.format(
+            requireActivity().resources.getString(R.string.score_percentage),
+            gameResult.percentRightAnswer
+        )
+
+    }
+
+    private fun getColorFromState(state: Boolean?): Int {
+        val colorId = if (state == true) {
+            android.R.color.holo_green_light
+        } else {
+            android.R.color.holo_red_light
+        }
+
+        return ContextCompat.getColor(requireContext(), colorId)
+    }
+
+    private fun setOnClickListeners() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 retryGame()
             }
         })
+        binding.buttonRetry.setOnClickListener {
+            retryGame()
+        }
+
     }
+
+    private fun getResultImg(state: Boolean): Int {
+        return if (state) {
+            R.drawable.ic_smile
+        } else {
+            R.drawable.ic_smile_2
+        }
+    }
+
 
     private fun parsArgs() {
         val args = requireArguments()
