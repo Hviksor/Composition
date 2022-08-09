@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/Users/Ololo/AndroidStudioProjects/Composition/app/src/main/res/layout/activity_main.xml" value="0.184375" />
         <entry key="..\:/Users/Ololo/AndroidStudioProjects/Composition/app/src/main/res/layout/fragment_game.xml" value="0.184375" />
+        <entry key="..\:/Users/eisrkov/AndroidStudioProjects/Composition/app/src/main/res/drawable/circle_background.xml" value="0.141" />
         <entry key="..\:/Users/eisrkov/AndroidStudioProjects/Composition/app/src/main/res/layout/activity_main.xml" value="0.184375" />
+        <entry key="..\:/Users/eisrkov/AndroidStudioProjects/Composition/app/src/main/res/layout/fragment_choose_levele.xml" value="0.184375" />
+        <entry key="..\:/Users/eisrkov/AndroidStudioProjects/Composition/app/src/main/res/layout/fragment_finish_game.xml" value="0.184375" />
         <entry key="..\:/Users/eisrkov/AndroidStudioProjects/Composition/app/src/main/res/layout/fragment_game.xml" value="0.184375" />
+        <entry key="..\:/Users/eisrkov/AndroidStudioProjects/Composition/app/src/main/res/layout/fragment_game_finished.xml" value="0.184375" />
       </map>
     </option>
   </component>

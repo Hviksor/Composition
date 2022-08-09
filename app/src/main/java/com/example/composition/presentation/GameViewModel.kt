@@ -61,7 +61,11 @@ class GameViewModel(
     private var countOfRightAnswer = 0
     private var countOfQuestion = 0
 
-    fun startGame(level: Level) {
+    init {
+        startGame()
+    }
+
+    fun startGame() {
         getSettings()
         startTimer()
         generateQuestion()
