@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
 import com.example.composition.R
 import com.example.composition.databinding.FragmentGameFinishedBinding
 import com.example.composition.domain.entity.GameResult
@@ -77,11 +78,12 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun setOnClickListeners() {
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                retryGame()
-            }
-        })
+//        requireActivity().onBackPressedDispatcher.addCallback(
+//            viewLifecycleOwner, object : OnBackPressedCallback(true) {
+//                override fun handleOnBackPressed() {
+//                    retryGame()
+//                }
+//            })
         binding.buttonRetry.setOnClickListener {
             retryGame()
         }
@@ -108,8 +110,9 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun retryGame() {
-        requireActivity().supportFragmentManager
-            .popBackStack(GameFragment.NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        findNavController().popBackStack()
+//        requireActivity().supportFragmentManager
+//            .popBackStack(GameFragment.NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
     }
 
     override fun onDestroyView() {
@@ -119,7 +122,7 @@ class GameFinishedFragment : Fragment() {
     }
 
     companion object {
-        private const val KEY_GAME_RESULT = "game_result"
+        const val KEY_GAME_RESULT = "game_result"
 
         fun getInstance(gameResult: GameResult): GameFinishedFragment {
             return GameFinishedFragment().apply {
