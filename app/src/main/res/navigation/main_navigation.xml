@@ -31,17 +31,17 @@
             app:destination="@id/gameFinishedFragment"
             app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_gameFragment_to_chooseLevelFragment"
-            app:destination="@id/chooseLevelFragment" />
+        <argument
+            android:name="level"
+            app:argType="com.example.composition.domain.entity.Level" />
     </fragment>
     <fragment
         android:id="@+id/gameFinishedFragment"
         android:name="com.example.composition.presentation.GameFinishedFragment"
         android:label="fragment_game_finished"
         tools:layout="@layout/fragment_game_finished" >
-        <action
-            android:id="@+id/action_gameFinishedFragment_to_chooseLevelFragment"
-            app:destination="@id/chooseLevelFragment" />
+        <argument
+            android:name="gameResult"
+            app:argType="com.example.composition.domain.entity.GameResult" />
     </fragment>
 </navigation>
