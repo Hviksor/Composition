@@ -1,11 +1,17 @@
 package com.example.composition.presentation
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.example.composition.R
+
+interface OnOptionClickListener {
+    fun onOptionClick(option: Int)
+}
 
 @BindingAdapter("requiredAnswers")
 fun bindRequiredAnswers(textView: TextView, count: Int) {
@@ -52,6 +58,39 @@ fun bindEmojiResult(imageView: ImageView, state: Boolean) {
     imageView.setImageResource(getResultImg(state))
 }
 
+//__________________GameFragment_______________________________
+
+
+@BindingAdapter("progressBarProgressPercent")
+fun bindProgressBarProgressPercent(progressBar: ProgressBar, percent: Int) {
+    progressBar.progress = percent
+}
+
+@BindingAdapter("progressBarColor")
+fun bindProgressBarColor(progressBar: ProgressBar, state: Boolean) {
+    progressBar.progressTintList = ColorStateList.valueOf(
+        getColorForState(state, progressBar.context)
+    )
+}
+
+@BindingAdapter("answersProgressColor")
+fun bindAnswersProgressColor(textView: TextView, state: Boolean) {
+    textView.setTextColor(
+        getColorForState(state, textView.context)
+    )
+}
+
+@BindingAdapter("numberAsText")
+fun bitNumbersAsText(textView: TextView, number: Number) {
+    textView.text = number.toString()
+}
+
+@BindingAdapter("onOptionClickListener")
+fun bindOnOptionClickListener(textView: TextView, clickListener: OnOptionClickListener) {
+    textView.setOnClickListener {
+        clickListener.onOptionClick(textView.text.toString().toInt())
+    }
+}
 
 private fun getResultImg(state: Boolean): Int {
     return if (state) {
@@ -61,8 +100,8 @@ private fun getResultImg(state: Boolean): Int {
     }
 }
 
-private fun getColorForState(state: Boolean?, context: Context): Int {
-    val colorId = if (state == true) {
+private fun getColorForState(state: Boolean, context: Context): Int {
+    val colorId = if (state) {
         android.R.color.holo_green_light
     } else {
         android.R.color.holo_red_light
