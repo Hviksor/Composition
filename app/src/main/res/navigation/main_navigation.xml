@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.composition.presentation.WelcomeFragment"
+        android:name="com.example.composition.presentation.screens.WelcomeFragment"
         android:label="WelcomeFragment" >
         <action
             android:id="@+id/action_welcomeFragment_to_chooseLevelFragment"
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/chooseLevelFragment"
-        android:name="com.example.composition.presentation.ChooseLevelFragment"
+        android:name="com.example.composition.presentation.screens.ChooseLevelFragment"
         android:label="ChooseLevelFragment" >
         <action
             android:id="@+id/action_chooseLevelFragment_to_gameFragment"
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.example.composition.presentation.GameFragment"
+        android:name="com.example.composition.presentation.screens.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFinishedFragment"
-        android:name="com.example.composition.presentation.GameFinishedFragment"
+        android:name="com.example.composition.presentation.screens.GameFinishedFragment"
         android:label="fragment_game_finished"
         tools:layout="@layout/fragment_game_finished" >
         <argument

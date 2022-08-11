@@ -1,4 +1,4 @@
-package com.example.composition.presentation
+package com.example.composition.presentation.screens
 
 import android.content.res.ColorStateList
 import android.os.Bundle
@@ -13,7 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.composition.databinding.FragmentGameBinding
 import com.example.composition.domain.entity.GameResult
-import com.example.composition.domain.entity.Level
+import com.example.composition.presentation.GameViewModel
+import com.example.composition.presentation.GameViewModelFactory
 
 class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null

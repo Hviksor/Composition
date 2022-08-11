@@ -12,4 +12,5 @@ data class GameResult(
     val enoughCount: Boolean?,
     val enoughPercent: Boolean?,
     val percentRightAnswer: Int?
-) : Parcelable
+) : Parcelable {
+}

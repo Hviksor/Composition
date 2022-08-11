@@ -1,4 +1,4 @@
-package com.example.composition.presentation
+package com.example.composition.presentation.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.composition.R
 import com.example.composition.databinding.FragmentGameFinishedBinding
 import com.example.composition.domain.entity.GameResult
 
@@ -37,29 +36,7 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun setBinding() {
-        binding.emojiResult.setImageResource(getResultImg(gameResult.winner))
-        binding.tvRequiredAnswers.text = String.format(
-            requireActivity().resources.getString(R.string.required_score),
-            gameResult.gameSettings.minCountOfRightAnswers
-        )
-        binding.tvRequiredAnswers.text = String.format(
-            requireActivity().resources.getString(R.string.required_score),
-            gameResult.gameSettings.minCountOfRightAnswers
-        )
-        binding.tvRequiredPercentage.text = String.format(
-            requireActivity().resources.getString(R.string.required_percentage),
-            gameResult.gameSettings.minPercentOfRightAnswers
-        )
-        binding.tvScoreAnswers.text = String.format(
-            requireActivity().resources.getString(R.string.score_answers),
-            gameResult.countOfRightAnswers
-        )
-        binding.tvScoreAnswers.setTextColor(getColorFromState(gameResult.enoughCount))
-        binding.tvScorePercentage.setTextColor(getColorFromState(gameResult.enoughPercent))
-        binding.tvScorePercentage.text = String.format(
-            requireActivity().resources.getString(R.string.score_percentage),
-            gameResult.percentRightAnswer
-        )
+        binding.gameResult = args.gameResult
     }
 
     private fun getColorFromState(state: Boolean?): Int {
@@ -77,13 +54,6 @@ class GameFinishedFragment : Fragment() {
         }
     }
 
-    private fun getResultImg(state: Boolean): Int {
-        return if (state) {
-            R.drawable.ic_smile
-        } else {
-            R.drawable.ic_smile_2
-        }
-    }
 
     private fun retryGame() {
         findNavController().popBackStack()
