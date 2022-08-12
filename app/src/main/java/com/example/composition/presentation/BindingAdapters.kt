@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.example.composition.R
 
-interface OnOptionClickListener {
+interface OnOptionClickListeners {
     fun onOptionClick(option: Int)
 }
 
@@ -86,7 +86,7 @@ fun bitNumbersAsText(textView: TextView, number: Number) {
 }
 
 @BindingAdapter("onOptionClickListener")
-fun bindOnOptionClickListener(textView: TextView, clickListener: OnOptionClickListener) {
+fun bindOnOptionClickListener(textView: TextView, clickListener: OnOptionClickListeners) {
     textView.setOnClickListener {
         clickListener.onOptionClick(textView.text.toString().toInt())
     }
