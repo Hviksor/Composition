@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Composition</string>
     <string name="welcome_logo">Welcome Logo</string>
-    <string name="title">Состав числа</string>
-    <string name="game_rules">Перед вами будет три фигуры, две снизу и одна сверху, в двух из них будут числа. Необходимо, чтобы сумма чисел из двух нижних фигур была равна числу в верхней фигуре, для этого нужно вставить недостающее число.\n\nПример: в верхнем круге число 7, в одном из нижних знак вопроса, а в другом число 4. Значит на месте вопросительного знака должно быть число 3, потому что 3 + 4 = 7</string>
+    <string name="title">Цифробой</string>
+    <string name="game_rules">Перед вами будет три фигуры, две снизу и одна сверху, в двух из них будут числа. Необходимо, чтобы сумма чисел из двух нижних фигур была равна числу в верхней фигуре, для этого нужно вставить недостающее число.\n\nПример: в верхнем кругу число 7, в одном из нижних знак вопроса, а в другом число 4. Значит на месте вопросительного знака должно быть число 3, потому что 3 + 4 = 7</string>
     <string name="understand">Принято</string>
-    <string name="choose_level_title">Уровень сложности</string>
+    <string name="choose_level_title">Выбери уровень сложности</string>
     <string name="test_level">Тестовый</string>
     <string name="easy_level">Лёгкий</string>
     <string name="normal_level">Нормальный</string>
@@ -17,5 +17,7 @@
     <string name="right_answers">Правильных ответов %s из %s необходимых</string>
     <string name="required_percentage">Необходимый процент правильных ответов: %s</string>
     <string name="required_score">Необходимое количество правильных ответов: %s</string>
+    <string name="result_greetings_positive">Оличный результат!</string>
+    <string name="result_greetings_negative">Может быть в следующий раз.</string>
 
 </resources>

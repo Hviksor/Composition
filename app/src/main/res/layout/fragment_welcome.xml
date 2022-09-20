@@ -10,7 +10,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/grey_light_my">
 
             <ImageView
                 android:id="@+id/iv_logo"
@@ -24,15 +25,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <com.google.android.material.textview.MaterialTextView
+            <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:gravity="center_horizontal"
                 android:text="@string/title"
-                android:textSize="36sp"
                 android:textStyle="bold"
+                android:textColor="@color/black__my"
+                android:textSize="32sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
@@ -42,12 +44,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:background="@drawable/rounded_corner_view"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="10dp"
+                android:paddingStart="16dp"
                 android:text="@string/game_rules"
-                android:textSize="16sp"
+                android:textColor="@color/grey_my"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                app:layout_goneMarginRight="12dp"
+                app:layout_goneMarginStart="16dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_understand"
@@ -62,6 +72,7 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="35dp"
+                android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
