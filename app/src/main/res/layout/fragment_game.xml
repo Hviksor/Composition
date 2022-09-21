@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,9 +10,7 @@
             type="com.example.composition.presentation.GameViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.screens.GameFragment">
@@ -19,20 +19,21 @@
             android:id="@+id/tv_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="64dp"
             android:text="@{viewModel.formattedTime}"
-            android:textColor="@color/purple_700"
-            android:textSize="24sp"
+            android:textColor="@color/black__my"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12:12" />
 
         <TextView
             android:id="@+id/tv_sum"
             style="@style/QuestionTextStyle"
             android:layout_width="144dp"
             android:layout_height="144dp"
-            android:background="@drawable/circle_background"
+            android:background="@drawable/circulr_background"
             app:layout_constraintBottom_toTopOf="@id/tv_left_number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -69,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_left_number"
             app:layout_constraintTop_toTopOf="@id/tv_left_number"
-            tools:text="?" />
+            android:text="?" />
 
         <TextView
             android:id="@+id/tv_option_1"
@@ -149,7 +150,10 @@
             android:id="@+id/tv_answers_progress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="24dp"
+            android:gravity="center_horizontal"
+            android:textSize="16sp"
+            tools:text="Правильных ответов Х (минимум Y"
             android:text="@{viewModel.progressAnswer}"
             app:answersProgressColor="@{viewModel.enoughCount}"
             app:layout_constraintBottom_toTopOf="@id/progress_bar"

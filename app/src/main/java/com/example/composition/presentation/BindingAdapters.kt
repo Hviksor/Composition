@@ -28,6 +28,16 @@ fun bindRequiredPercentage(textView: TextView, count: Int) {
     )
 }
 
+@BindingAdapter("resultGreetings")
+fun bindResultGreetings(textView: TextView, state: Boolean) {
+    textView.text =  if (state) {
+        textView.context.resources.getString(R.string.result_greetings_positive)
+
+    } else {
+        textView.context.resources.getString(R.string.result_greetings_negative)
+    }
+}
+
 @BindingAdapter("scoreAnswers")
 fun bindScoreAnswers(textView: TextView, count: Int) {
     textView.text = String.format(

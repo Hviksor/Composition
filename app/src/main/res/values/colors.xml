@@ -12,4 +12,21 @@
     <color name="red">#F44336</color>
     <color name="holo_blue_grey">#007786</color>
     <color name="red_light">#B34D46</color>
+
+
+
+
+    <color name="blue_my">#366eee</color>
+    <color name="blue_light_my">#d6daff</color>
+    <color name="green_my">#02a12b</color>
+    <color name="green_light_my">#d5fddb</color>
+    <color name="yellow_my">#fcc522</color>
+    <color name="orange_my">#ffb001</color>
+    <color name="orange_light_my">#fff5c2</color>
+    <color name="red_my">#f31d26</color>
+    <color name="grey_my">#828487</color>
+    <color name="grey_light_my">#ffffff</color>
+    <color name="grey_light2_my">#f6f7f9</color>
+    <color name="black__my">#151515</color>
+
 </resources>
