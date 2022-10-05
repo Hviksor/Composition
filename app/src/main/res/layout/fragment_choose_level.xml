@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -12,7 +13,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
             android:layout_marginBottom="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
             android:gravity="center_horizontal"
+            android:paddingEnd="16dp"
             android:text="@string/choose_level_title"
             android:textColor="@color/black__my"
             android:textSize="32sp" />
@@ -38,6 +44,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/green_my"
+            android:fontFamily="sans-serif-condensed"
             android:text="@string/easy_level"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -53,6 +60,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/orange_my"
+            android:fontFamily="sans-serif-condensed"
             android:text="@string/normal_level"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -66,6 +74,7 @@
             android:layout_height="65dp"
             android:layout_margin="16dp"
             android:backgroundTint="@color/red"
+            android:fontFamily="sans-serif-condensed"
             android:text="@string/hard_level"
             android:textAllCaps="false"
             android:textColor="@color/white"
