@@ -17,9 +17,11 @@
 
         <TextView
             android:id="@+id/tv_timer"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
+            android:fontFamily="sans-serif-condensed"
             android:text="@{viewModel.formattedTime}"
             android:textColor="@color/black__my"
             android:textSize="40sp"
@@ -34,6 +36,7 @@
             android:layout_width="144dp"
             android:layout_height="144dp"
             android:background="@drawable/circulr_background"
+            android:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toTopOf="@id/tv_left_number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -50,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@color/teal_700"
+            android:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toTopOf="@id/tv_option_1"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/tv_question"
@@ -65,12 +69,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/teal_700"
+            android:fontFamily="sans-serif-condensed"
+            android:text="?"
             app:layout_constraintBottom_toBottomOf="@id/tv_left_number"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_left_number"
-            app:layout_constraintTop_toTopOf="@id/tv_left_number"
-            android:text="?" />
+            app:layout_constraintTop_toTopOf="@id/tv_left_number" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/tv_option_1"
@@ -78,8 +83,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_green_light"
+            android:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toTopOf="@id/tv_option_4"
-            app:layout_constraintEnd_toStartOf="@id/tv_option_5"
+            app:layout_constraintEnd_toStartOf="@+id/tv_option_2"
+            app:layout_constraintHorizontal_bias="0.5"
+
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:numberAsText="@{viewModel.question.options.get(0)}"
@@ -91,9 +99,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_orange_light"
-            app:layout_constraintBottom_toTopOf="@id/tv_option_4"
-            app:layout_constraintEnd_toStartOf="@id/tv_option_6"
-            app:layout_constraintStart_toEndOf="@id/tv_option_4"
+            android:fontFamily="sans-serif-condensed"
+            app:layout_constraintBottom_toTopOf="@+id/tv_option_5"
+            app:layout_constraintEnd_toStartOf="@+id/tv_option_3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_option_1"
             app:numberAsText="@{viewModel.question.options.get(1)}"
             app:onOptionClickListener="@{(option)-> viewModel.chooseAnswer(option)}" />
 
@@ -103,9 +113,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_purple"
-            app:layout_constraintBottom_toTopOf="@id/tv_option_4"
+            android:fontFamily="sans-serif-condensed"
+            app:layout_constraintBottom_toTopOf="@+id/tv_option_6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_option_5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_option_2"
             app:numberAsText="@{viewModel.question.options.get(2)}"
             app:onOptionClickListener="@{(option)-> viewModel.chooseAnswer(option)}" />
 
@@ -115,6 +127,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_blue_light"
+            android:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tv_option_5"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -128,6 +141,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_red_light"
+            android:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tv_option_6"
             app:layout_constraintStart_toEndOf="@id/tv_option_4"
@@ -140,6 +154,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_blue_bright"
+            android:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_option_5"
@@ -151,14 +166,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
+            android:fontFamily="sans-serif-condensed"
             android:gravity="center_horizontal"
-            android:textSize="16sp"
-            tools:text="Правильных ответов Х (минимум Y"
             android:text="@{viewModel.progressAnswer}"
+            android:textSize="16sp"
             app:answersProgressColor="@{viewModel.enoughCount}"
             app:layout_constraintBottom_toTopOf="@id/progress_bar"
             app:layout_constraintTop_toBottomOf="@id/tv_left_number"
-            app:layout_constraintVertical_chainStyle="spread" />
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:layout_editor_absoluteX="24dp"
+            tools:text="Правильных ответов Х (минимум Y" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
